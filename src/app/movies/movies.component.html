@@ -8,23 +8,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">John Wick</th>
-      <td>2014</td>
-      <td>Blu-Ray</td>
-      <td>YES</td>
-    </tr>
-    <tr>
-      <th scope="row">The Fellowship of the Ring</th>
-      <td>2001</td>
-      <td>DVD</td>
-      <td>NO</td>
-    </tr>
-    <tr>
-      <th scope="row">Thor: Ragnarock</th>
-      <td>2017</td>
-      <td>Blu-Ray</td>
-      <td>YES</td>
+    <tr *ngFor='let movie of movies'>
+      <th scope="row">{{ movie.title }}</th>
+      <td>{{ movie.year }}</td>
+      <td>{{ movie.format }}</td>
+      <td>{{ movie.available }}</td>
     </tr>
   </tbody>
 </table>

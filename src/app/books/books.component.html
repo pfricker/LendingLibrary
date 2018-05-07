@@ -8,23 +8,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">Harry Potter and the Prisoner of Azkaban</th>
-      <td>J.K. Rowling</td>
-      <td>Hardcover</td>
-      <td>YES</td>
-    </tr>
-    <tr>
-      <th scope="row">Dresden Files: Cold Days</th>
-      <td>Jim Butcher</td>
-      <td>Paperback</td>
-      <td>NO</td>
-    </tr>
-    <tr>
-      <th scope="row">Old Man's War</th>
-      <td>John Scalzi</td>
-      <td>Paperback</td>
-      <td>YES</td>
+    <tr *ngFor='let book of books'>
+      <th scope="row">{{ book.title }}</th>
+      <td>{{ book.author }}</td>
+      <td>{{ book.format }}</td>
+      <td>{{ book.available }}</td>
     </tr>
   </tbody>
 </table>
