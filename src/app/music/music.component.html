@@ -8,23 +8,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">Leave a Trace</th>
-      <td>Chvches</td>
-      <td>Vinyl</td>
-      <td>YES</td>
-    </tr>
-    <tr>
-      <th scope="row">Graceland</th>
-      <td>Paul Simon</td>
-      <td>CD</td>
-      <td>NO</td>
-    </tr>
-    <tr>
-      <th scope="row">Nine Tonigh</th>
-      <td>Bob Segar</td>
-      <td>Cassette</td>
-      <td>YES</td>
+    <tr *ngFor="let album of albums">
+      <th scope="row">{{ album.albumTitle }}</th>
+      <td>{{ album.artist }}</td>
+      <td>{{ album.format }}</td>
+      <td>
+        <img src="../../assets/GREEN.png" *ngIf="album.available">
+        <img src="../../assets/RED.png" *ngIf="!album.available">
+      </td>
     </tr>
   </tbody>
 </table>

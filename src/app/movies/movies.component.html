@@ -12,7 +12,10 @@
       <th scope="row">{{ movie.title }}</th>
       <td>{{ movie.year }}</td>
       <td>{{ movie.format }}</td>
-      <td>{{ movie.available }}</td>
+      <td>
+        <img src="../../assets/GREEN.png" *ngIf="movie.available">
+        <img src="../../assets/RED.png" *ngIf="!movie.available">
+      </td>
     </tr>
   </tbody>
 </table>

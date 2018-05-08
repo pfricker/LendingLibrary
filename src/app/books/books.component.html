@@ -12,7 +12,10 @@
       <th scope="row">{{ book.title }}</th>
       <td>{{ book.author }}</td>
       <td>{{ book.format }}</td>
-      <td>{{ book.available }}</td>
+      <td>
+        <img src="../../assets/GREEN.png" *ngIf="book.available">
+        <img src="../../assets/RED.png" *ngIf="!book.available">
+      </td>
     </tr>
   </tbody>
 </table>

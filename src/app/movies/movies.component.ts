@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IMovie } from './movie';
 
 @Component ({
   selector: 'movie-content',
@@ -7,24 +8,24 @@ import { Component } from '@angular/core';
 })
 
 export class MoviesComponent {
-  movies: any[] = [
+  movies: IMovie[] = [
     {
       "title": "John Wick",
       "year": 2014,
       "format": "Blu-Ray",
-      "Available": true
+      "available": true
     },
     {
       "title": "The Fellowship of the Ring",
       "year": 2001,
       "format": "DVD",
-      "Available": false
+      "available": false
     },
     {
       "title": "Thor: Ragnarok",
       "year": 2017,
       "format": "Blu-Ray",
-      "Available": true
+      "available": true
     }
   ]
 }
