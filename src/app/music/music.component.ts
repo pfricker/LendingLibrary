@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppService } from '../app.service';
+import { IDataWrapper } from '../dataWrapper';
 
 
 @Component ({
@@ -18,7 +19,7 @@ export class MusicComponent {
   ngOnInit(): void {
     this._appService.getAlbums()
       .subscribe(
-        (data: any[]) => this.albums = data.resource,
+        (data: IDataWrapper[]) => this.albums = data.resource,
         (err: any) => console.log(err),
         () => console.log(this.albums)
       );

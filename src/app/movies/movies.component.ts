@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppService } from '../app.service';
+import { IDataWrapper } from '../dataWrapper';
 
 @Component ({
   selector: 'movie-content',
@@ -17,7 +18,7 @@ export class MoviesComponent {
   ngOnInit(): void {
     this._appService.getMovies()
       .subscribe(
-        (data: any[]) => this.movies = data.resource,
+        (data: IDataWrapper[]) => this.movies = data.resource,
         (err: any) => console.log(err),
         () => console.log(this.movies)
     );

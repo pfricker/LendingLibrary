@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppService } from '../app.service';
+import { IDataWrapper } from '../dataWrapper';
 
 
 @Component ({
@@ -19,7 +20,7 @@ export class BooksComponent {
   ngOnInit(): void {
     this._appService.getBooks()
       .subscribe(
-        (data: any[]) => this.books = data.resource,
+        (data: IDataWrapper[]) => this.books = data.resource,
         (err: any) => console.log(err),
         () => console.log(this.books)
     );

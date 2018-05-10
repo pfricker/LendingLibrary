@@ -2,3 +2,7 @@ img {
   height: 30px;
   width: 30px;
 }
+
+tr td:last-child, tr th:last-child {
+  text-align: center;
+}

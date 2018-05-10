@@ -5,3 +5,7 @@
 h1 {
   padding: 20px 0 20px 20px;
 }
+
+tr td:last-child, tr th:last-child {
+  text-align: center;
+}

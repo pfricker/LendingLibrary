@@ -1,6 +1,12 @@
 <div class="row">
   <div class="col-sm-10 offset-sm-1">
-    <tabset>
+    <button [routerLink]="['/add']" type="button" class="btn btn-primary">Add Item</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-10 offset-sm-1">
+    <tabset [justified]="true">
       <tab heading="Books" id="tab1"><book-content></book-content></tab>
       <tab heading="Movies"><movie-content></movie-content></tab>
       <tab heading="Music"><music-content></music-content></tab>
