@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IMovie } from './movie';
+import { AppService } from '../app.service';
 
 @Component ({
   selector: 'movie-content',
@@ -8,24 +8,19 @@ import { IMovie } from './movie';
 })
 
 export class MoviesComponent {
-  movies: IMovie[] = [
-    {
-      "title": "John Wick",
-      "year": 2014,
-      "format": "Blu-Ray",
-      "available": true
-    },
-    {
-      "title": "The Fellowship of the Ring",
-      "year": 2001,
-      "format": "DVD",
-      "available": false
-    },
-    {
-      "title": "Thor: Ragnarok",
-      "year": 2017,
-      "format": "Blu-Ray",
-      "available": true
-    }
-  ]
-}
+  movies: any[] = [];
+
+  constructor(private _appService: AppService) {
+
+  }
+
+  ngOnInit(): void {
+    this._appService.getMovies()
+      .subscribe(
+        (data: any[]) => this.movies = data.resource,
+        (err: any) => console.log(err),
+        () => console.log(this.movies)
+    );
+  }
+
+  }

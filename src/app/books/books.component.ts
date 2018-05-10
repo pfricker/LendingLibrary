@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IBook } from './book';
+import { AppService } from '../app.service';
+
 
 @Component ({
   selector: 'book-content',
@@ -9,27 +10,19 @@ import { IBook } from './book';
 })
 
 export class BooksComponent {
-  books: IBook [] = [
-    {
-      "bookID": 1,
-      "title": "Harry Potter and the Prisoner of Azkaban",
-      "author": "J.K. Rowling",
-      "format": "Hardcover",
-      "available": false
-    },
-    {
-      "bookID": 2,
-      "title": "Dresden Files: Cold Days",
-      "author": "Jim Butcher",
-      "format": "Paperback",
-      "available": true
-    },
-    {
-      "bookID": 3,
-      "title": "Old Man's War",
-      "author": "John Scalzi",
-      "format": "Paperback",
-      "available": true
-    },
-  ]
+  books: any[] = [];
+
+  constructor(private _appService: AppService) {
+
+  }
+
+  ngOnInit(): void {
+    this._appService.getBooks()
+      .subscribe(
+        (data: any[]) => this.books = data.resource,
+        (err: any) => console.log(err),
+        () => console.log(this.books)
+    );
+  }
+
 }
