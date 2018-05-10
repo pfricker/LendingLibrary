@@ -19,7 +19,7 @@ export class MusicComponent {
   ngOnInit(): void {
     this._appService.getAlbums()
       .subscribe(
-        (data: IDataWrapper[]) => this.albums = data,
+        (data: IDataWrapper[]) => this.albums = data.resource,
         (err: any) => console.log(err),
         () => console.log(this.albums)
       );

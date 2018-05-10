@@ -20,7 +20,7 @@ export class BooksComponent {
   ngOnInit(): void {
     this._appService.getBooks()
       .subscribe(
-        (data: IDataWrapper[]) => this.books = data,
+        (data: IDataWrapper[]) => this.books = data.resource,
         (err: any) => console.log(err)
     );
   }
