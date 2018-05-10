@@ -18,7 +18,7 @@ export class MoviesComponent {
   ngOnInit(): void {
     this._appService.getMovies()
       .subscribe(
-        (data: IDataWrapper[]) => this.movies = data.resource,
+        (data: IDataWrapper[]) => this.movies = data,
         (err: any) => console.log(err),
         () => console.log(this.movies)
     );
