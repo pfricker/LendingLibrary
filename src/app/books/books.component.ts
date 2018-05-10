@@ -21,9 +21,10 @@ export class BooksComponent {
     this._appService.getBooks()
       .subscribe(
         (data: IDataWrapper[]) => this.books = data.resource,
-        (err: any) => console.log(err),
-        () => console.log(this.books)
+        (err: any) => console.log(err)
     );
   }
+
+  
 
 }
